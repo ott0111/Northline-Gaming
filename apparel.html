@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Northline Supply — Apparel</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--void:#fff;--surface:#f6f6f7;--border:rgba(0,0,0,0.08);--text-1:#0a0a0a;--text-2:#55575c;--display:'Space Grotesk',sans-serif;--body:'Inter',sans-serif;--edge:clamp(24px,6vw,64px);--radius-md:16px;--bearing:#050505}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);color:var(--text-1);background:var(--void)}
+.wrap{max-width:1200px;margin:0 auto;padding:120px var(--edge)}
+.logo img{height:34px}
+.hero h1{font-family:var(--display);font-size:clamp(1.6rem,3.4vw,2.6rem);margin-bottom:8px}
+.hero p{color:var(--text-2);margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{border:1px solid var(--border);padding:20px;border-radius:12px;background:var(--surface);text-align:center}
+.card h3{font-family:var(--display);margin-bottom:8px}
+.coming-soon{display:flex;flex-direction:column;gap:10px;align-items:center;justify-content:center;padding:18px;border-radius:12px;border:1px solid var(--border);background:linear-gradient(180deg,rgba(0,0,0,0.01),transparent)}
+.waitlist{margin-top:18px;display:flex;gap:8px}
+.btn{padding:10px 14px;border-radius:100px;background:var(--bearing);color:#fff;border:none;cursor:pointer}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav class="nav" style="position:fixed;top:0;left:0;right:0;padding:18px var(--edge);display:flex;align-items:center;justify-content:space-between;z-index:50">
+  <div class="logo"><img src="assets/Northlineee.jpg" alt="Northline"> NORTHLINE</div>
+  <div style="display:flex;gap:12px;align-items:center"><a href="become-a-creator.html" class="btn">Become a Creator</a></div>
+</nav>
+
+<main class="wrap">
+  <header class="hero">
+    <h1>Northline Supply</h1>
+    <p>Gaming culture, designed differently.</p>
+  </header>
+
+  <section>
+    <div class="grid">
+      <div class="card coming-soon"><div>COMING SOON</div><h3>Northline Hoodie</h3><div>Northline Hoodie — COMING SOON</div><div class="waitlist"><button class="btn">Join Waitlist</button></div></div>
+      <div class="card coming-soon"><div>COMING SOON</div><h3>Northline Collection 001</h3><div>Northline Collection 001 — COMING SOON</div><div class="waitlist"><button class="btn">Join Waitlist</button></div></div>
+      <div class="card coming-soon"><div>COMING SOON</div><h3>Northline Cap</h3><div>Northline Cap — COMING SOON</div><div class="waitlist"><button class="btn">Join Waitlist</button></div></div>
+    </div>
+
+    <div style="margin-top:28px;text-align:center">
+      <p style="color:var(--text-2)">Be the first to know when Northline Supply launches.</p>
+      <a href="join.html" class="btn">Join Waitlist</a>
+    </div>
+  </section>
+</main>
+
+<footer style="padding:60px 0;border-top:1px solid var(--border);margin-top:40px"><div class="wrap"><div style="display:flex;justify-content:space-between;align-items:center"><div style="color:var(--text-2)">© 2026 Northline. All rights reserved.</div><div style="display:flex;gap:10px"><a href="#">X</a><a href="#">DC</a><a href="#">IG</a></div></div></div></footer>
+
+<script src="cookie-consent.js"></script>
+</body>
+</html>
