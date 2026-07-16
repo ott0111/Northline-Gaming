@@ -1055,10 +1055,12 @@ footer{
 <script>
 // Nav scroll state
 const nav = document.getElementById('mainNav');
-<script src="nav-dropdown.js"></script>
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 20);
 }, { passive:true });
+</script>
+<script src="cookie-consent.js"></script>
+<script src="nav-dropdown.js"></script>
 
 // Scroll progress -> bearing rail + mobile top bar
 const bearingFill = document.getElementById('bearingFill');
