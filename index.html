@@ -11,17 +11,17 @@
 
 /* ============ TOKENS ============ */
 :root{
-  --void: #050505;
-  --surface: #0c0d0f;
-  --surface-2: #131519;
-  --border: rgba(255,255,255,0.08);
-  --border-strong: rgba(255,255,255,0.16);
-  --text-1: #f4f5f7;
-  --text-2: #9a9fa6;
-  --text-3: #63666d;
-  --bearing: #4a7fff;
-  --bearing-soft: rgba(74,127,255,0.14);
-  --bearing-glow: rgba(74,127,255,0.45);
+  --void: #ffffff;
+  --surface: #f6f6f7;
+  --surface-2: #ededee;
+  --border: rgba(0,0,0,0.08);
+  --border-strong: rgba(0,0,0,0.15);
+  --text-1: #0a0a0a;
+  --text-2: #55575c;
+  --text-3: #8a8d93;
+  --bearing: #050505;
+  --bearing-soft: rgba(5,5,5,0.06);
+  --bearing-glow: rgba(5,5,5,0.25);
 
   --display: 'Space Grotesk', sans-serif;
   --body: 'Inter', sans-serif;
@@ -66,7 +66,7 @@ a{ color:inherit; text-decoration:none; }
 /* ============ BACKDROP TEXTURE ============ */
 .grain{
   position:fixed; inset:0; pointer-events:none; z-index:1;
-  background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,0.035) 1px, transparent 0);
+  background-image:radial-gradient(circle at 1px 1px, rgba(0,0,0,0.035) 1px, transparent 0);
   background-size:3px 3px;
   opacity:0.5;
 }
@@ -142,7 +142,7 @@ a{ color:inherit; text-decoration:none; }
 
 .btn-primary{
   background:var(--bearing);
-  color:#050505;
+  color:var(--void);
 }
 .btn-primary:hover{ box-shadow:0 10px 30px -8px var(--bearing-glow); }
 
@@ -184,13 +184,13 @@ a{ color:inherit; text-decoration:none; }
   position:relative;
   width:1px;
   flex:1;
-  background:linear-gradient(to bottom, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  background:linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.02));
 }
 .bearing-fill{
   position:absolute;
   top:0; left:0; width:100%;
   height:0%;
-  background:linear-gradient(to bottom, var(--bearing), rgba(74,127,255,0.1));
+  background:linear-gradient(to bottom, var(--bearing), rgba(5,5,5,0.1));
   box-shadow:0 0 12px var(--bearing-glow);
   transition:height 0.1s linear;
 }
@@ -201,7 +201,7 @@ a{ color:inherit; text-decoration:none; }
   width:8px; height:8px;
   border-radius:50%;
   background:var(--bearing);
-  box-shadow:0 0 0 4px rgba(74,127,255,0.18), 0 0 16px var(--bearing-glow);
+  box-shadow:0 0 0 4px rgba(5,5,5,0.14), 0 0 16px var(--bearing-glow);
   transform:translate(-50%,-50%);
   transition:top 0.1s linear;
 }
@@ -228,7 +228,7 @@ a{ color:inherit; text-decoration:none; }
 
 .top-progress{
   position:fixed; top:0; left:0; right:0; height:2px; z-index:60;
-  background:rgba(255,255,255,0.06);
+  background:rgba(0,0,0,0.08);
   display:none;
 }
 .top-progress-fill{
@@ -305,15 +305,15 @@ a{ color:inherit; text-decoration:none; }
   position:absolute; inset:0;
   z-index:0;
   background:
-    radial-gradient(ellipse 60% 45% at 50% 18%, rgba(74,127,255,0.14), transparent 60%),
-    radial-gradient(ellipse 40% 30% at 85% 75%, rgba(74,127,255,0.06), transparent 60%);
+    radial-gradient(ellipse 60% 45% at 50% 18%, rgba(5,5,5,0.05), transparent 60%),
+    radial-gradient(ellipse 40% 30% at 85% 75%, rgba(5,5,5,0.025), transparent 60%);
 }
 
 .hero-dot{
   position:absolute;
   width:3px; height:3px;
   border-radius:50%;
-  background:rgba(255,255,255,0.5);
+  background:rgba(0,0,0,0.32);
   animation:drift 9s ease-in-out infinite;
 }
 @keyframes drift{
@@ -336,7 +336,7 @@ a{ color:inherit; text-decoration:none; }
   position:relative;
   margin:44px 0 40px;
   height:1px;
-  background:linear-gradient(to right, transparent, rgba(255,255,255,0.22) 15%, rgba(255,255,255,0.22) 85%, transparent);
+  background:linear-gradient(to right, transparent, rgba(0,0,0,0.18) 15%, rgba(0,0,0,0.18) 85%, transparent);
   max-width:820px;
   overflow:visible;
 }
@@ -436,7 +436,7 @@ a{ color:inherit; text-decoration:none; }
   color:var(--text-3);
   white-space:nowrap;
 }
-.tag.live{ color:var(--bearing); border-color:rgba(74,127,255,0.4); background:var(--bearing-soft); }
+.tag.live{ color:var(--bearing); border-color:rgba(5,5,5,0.3); background:var(--bearing-soft); }
 
 .pillar h3{
   font-family:var(--display);
@@ -461,7 +461,7 @@ a{ color:inherit; text-decoration:none; }
   gap:20px;
 }
 .creator-card{
-  background:linear-gradient(160deg, rgba(255,255,255,0.035), rgba(255,255,255,0.01));
+  background:linear-gradient(160deg, rgba(0,0,0,0.028), rgba(0,0,0,0.006));
   border:1px solid var(--border);
   border-radius:var(--radius-md);
   padding:28px;
@@ -472,7 +472,7 @@ a{ color:inherit; text-decoration:none; }
 .creator-card:hover{
   transform:translateY(-6px);
   border-color:var(--border-strong);
-  background:linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.015));
+  background:linear-gradient(160deg, rgba(0,0,0,0.045), rgba(0,0,0,0.01));
 }
 .creator-avatar{
   width:56px; height:56px;
@@ -512,7 +512,7 @@ a{ color:inherit; text-decoration:none; }
   align-items:center;
 }
 .community-panel{
-  background:rgba(255,255,255,0.03);
+  background:rgba(0,0,0,0.025);
   border:1px solid var(--border);
   border-radius:var(--radius-lg);
   backdrop-filter:blur(20px);
@@ -552,7 +552,7 @@ a{ color:inherit; text-decoration:none; }
   position:absolute;
   left:5px; top:6px; bottom:6px;
   width:1px;
-  background:linear-gradient(to bottom, var(--bearing), rgba(255,255,255,0.06));
+  background:linear-gradient(to bottom, var(--bearing), rgba(0,0,0,0.08));
 }
 .road-item{
   position:relative;
@@ -626,7 +626,7 @@ a{ color:inherit; text-decoration:none; }
 }
 .cta-banner-field{
   position:absolute; inset:0;
-  background:radial-gradient(ellipse 55% 60% at 50% 50%, rgba(74,127,255,0.12), transparent 65%);
+  background:radial-gradient(ellipse 55% 60% at 50% 50%, rgba(5,5,5,0.045), transparent 65%);
 }
 .cta-banner h2{
   position:relative; z-index:2;
@@ -697,7 +697,7 @@ footer{
   width:34px; height:34px;
   display:flex; align-items:center; justify-content:center;
   cursor:pointer;
-  color:#050505;
+  color:var(--void);
   flex-shrink:0;
   transition:transform 0.3s;
 }
@@ -863,7 +863,7 @@ footer{
 
     <div class="creator-grid reveal">
       <div class="creator-card">
-        <div class="creator-avatar" style="background:linear-gradient(140deg,#4a7fff,#8fb0ff);">KR</div>
+        <div class="creator-avatar" style="background:linear-gradient(140deg,#050505,#5a5c60);">KR</div>
         <div class="creator-name">Kairo</div>
         <div class="creator-meta">FPS · Full-time roster</div>
         <div class="creator-stats"><span class="creator-stat-num">1.8M</span><span class="creator-stat-label">Followers</span></div>
@@ -881,7 +881,7 @@ footer{
         <div class="creator-stats"><span class="creator-stat-num">640K</span><span class="creator-stat-label">Followers</span></div>
       </div>
       <div class="creator-card">
-        <div class="creator-avatar" style="background:linear-gradient(140deg,#4a7fff,#2c4fbf);">OR</div>
+        <div class="creator-avatar" style="background:linear-gradient(140deg,#050505,#3a3b3e);">OR</div>
         <div class="creator-name">Orbit</div>
         <div class="creator-meta">Strategy · Full-time roster</div>
         <div class="creator-stats"><span class="creator-stat-num">980K</span><span class="creator-stat-label">Followers</span></div>
