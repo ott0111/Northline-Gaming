@@ -154,12 +154,35 @@ footer{ border-top:1px solid var(--border); padding:80px 0 32px; }
     <a href="careers.html">Careers</a>
     <a href="press.html">Press</a>
   </div>
-  <div class="nav-cta">
-    <a href="become-a-creator.html" class="btn btn-ghost btn-sm">Become a Creator</a>
-    <a href="join.html" class="btn btn-primary btn-sm">Join Northline</a>
-  </div>
-</nav>
-
+    <div class="nav-links" role="menubar">
+      <div class="nav-item has-dropdown">
+        <button class="nav-btn" aria-expanded="false">Creators</button>
+        <div class="dropdown" role="menu">
+          <a href="agency.html">Creator Agency</a>
+          <a href="programs.html">Creator Programs</a>
+          <a href="services.html">Creative Services</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="community.html">Community</a></div>
+      <div class="nav-item has-dropdown">
+        <button class="nav-btn" aria-expanded="false">Products</button>
+        <div class="dropdown" role="menu">
+          <a href="apparel.html">Apparel</a>
+          <a href="software.html">Software</a>
+        </div>
+      </div>
+      <div class="nav-item has-dropdown">
+        <button class="nav-btn" aria-expanded="false">Company</button>
+        <div class="dropdown" role="menu">
+          <a href="events.html">Events</a>
+          <a href="partners.html">Partnerships</a>
+          <a href="ventures.html">Ventures</a>
+          <a href="about.html">About</a>
+          <a href="careers.html">Careers</a>
+          <a href="press.html">Press</a>
+        </div>
+      </div>
+    </div>
 <header class="page-hero">
   <div class="wrap">
     <h1>Creator Agency</h1>
@@ -312,7 +335,7 @@ revealEls.forEach(el => io.observe(el));
 </script>
 
 <script src="cookie-consent.js"></script>
-</script>
+<script src="nav-dropdown.js"></script>
 <script>
 // Simple testimonials switcher (placeholder)
 const testimonials = [

@@ -30,18 +30,35 @@ body{font-family:var(--body);color:var(--text-1);background:var(--void)}
 <body>
 <nav class="nav" id="mainNav">
   <div class="logo"><img src="assets/Northlineee.jpg" alt="Northline"><span class="logo-mark" aria-hidden="true"></span>NORTHLINE</div>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="agency.html">Creator Agency</a>
-    <a href="programs.html">Creator Programs</a>
-    <a href="services.html">Creative Services</a>
-    <a href="community.html">Community</a>
-    <a href="apparel.html">Apparel</a>
-    <a href="software.html">Software</a>
-    <a href="events.html">Events</a>
-    <a href="partners.html">Partnerships</a>
-    <a href="ventures.html">Ventures</a>
-    <a href="become-a-creator.html" class="btn">Become a Creator</a>
+  <div class="nav-links" role="menubar">
+    <div class="nav-item has-dropdown">
+      <button class="nav-btn" aria-expanded="false">Creators</button>
+      <div class="dropdown" role="menu">
+        <a href="agency.html">Creator Agency</a>
+        <a href="programs.html">Creator Programs</a>
+        <a href="services.html">Creative Services</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="community.html">Community</a></div>
+    <div class="nav-item has-dropdown">
+      <button class="nav-btn" aria-expanded="false">Products</button>
+      <div class="dropdown" role="menu">
+        <a href="apparel.html">Apparel</a>
+        <a href="software.html">Software</a>
+      </div>
+    </div>
+    <div class="nav-item has-dropdown">
+      <button class="nav-btn" aria-expanded="false">Company</button>
+      <div class="dropdown" role="menu">
+        <a href="events.html">Events</a>
+        <a href="partners.html">Partnerships</a>
+        <a href="ventures.html">Ventures</a>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="press.html">Press</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="become-a-creator.html" class="btn">Become a Creator</a></div>
   </div>
 </nav>
 
@@ -104,5 +121,6 @@ body{font-family:var(--body);color:var(--text-1);background:var(--void)}
 </footer>
 
 <script src="cookie-consent.js"></script>
+<script src="nav-dropdown.js"></script>
 </body>
 </html>

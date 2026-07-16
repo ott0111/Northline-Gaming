@@ -26,7 +26,36 @@ body{font-family:var(--body);color:var(--text-1);background:var(--void)}
 <body>
 <nav class="nav" style="position:fixed;top:0;left:0;right:0;padding:18px var(--edge);display:flex;align-items:center;justify-content:space-between;z-index:50">
   <div class="logo"><img src="assets/Northlineee.jpg" alt="Northline"> NORTHLINE</div>
-  <div style="display:flex;gap:12px;align-items:center"><a href="become-a-creator.html" class="btn">Become a Creator</a></div>
+  <div class="nav-links" role="menubar">
+    <div class="nav-item has-dropdown">
+      <button class="nav-btn" aria-expanded="false">Creators</button>
+      <div class="dropdown" role="menu">
+        <a href="agency.html">Creator Agency</a>
+        <a href="programs.html">Creator Programs</a>
+        <a href="services.html">Creative Services</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="community.html">Community</a></div>
+    <div class="nav-item has-dropdown">
+      <button class="nav-btn" aria-expanded="false">Products</button>
+      <div class="dropdown" role="menu">
+        <a href="apparel.html">Apparel</a>
+        <a href="software.html">Software</a>
+      </div>
+    </div>
+    <div class="nav-item has-dropdown">
+      <button class="nav-btn" aria-expanded="false">Company</button>
+      <div class="dropdown" role="menu">
+        <a href="events.html">Events</a>
+        <a href="partners.html">Partnerships</a>
+        <a href="ventures.html">Ventures</a>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="press.html">Press</a>
+      </div>
+    </div>
+    <div class="nav-item"><a href="become-a-creator.html" class="btn">Become a Creator</a></div>
+  </div>
 </nav>
 
 <main class="wrap">
@@ -52,5 +81,6 @@ body{font-family:var(--body);color:var(--text-1);background:var(--void)}
 <footer style="padding:60px 0;border-top:1px solid var(--border);margin-top:40px"><div class="wrap"><div style="display:flex;justify-content:space-between;align-items:center"><div style="color:var(--text-2)">© 2026 Northline. All rights reserved.</div><div style="display:flex;gap:10px"><a href="#">X</a><a href="#">DC</a><a href="#">IG</a></div></div></div></footer>
 
 <script src="cookie-consent.js"></script>
+<script src="nav-dropdown.js"></script>
 </body>
 </html>
