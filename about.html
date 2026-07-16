@@ -640,10 +640,8 @@ footer{
   </div>
 </footer>
 
-</script>
-<script src="nav-dropdown.js"></script>
-</script>
-</body>
+<script>
+const nav = document.getElementById('mainNav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 20);
 }, { passive:true });
@@ -696,6 +694,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 </script>
+<script src="cookie-consent.js"></script>
 <script src="nav-dropdown.js"></script>
 
 </body>
