@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact — Northline</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>body{font-family:Inter,Arial,Helvetica,sans-serif;margin:0;color:#111;background:#fff}.wrap{max-width:760px;margin:120px auto;padding:0 24px}.card{padding:28px;border:1px solid rgba(0,0,0,0.06);border-radius:12px}.field{margin-bottom:12px}.input,textarea{width:100%;padding:10px;border:1px solid rgba(0,0,0,0.08);border-radius:8px}button{background:#050505;color:#fff;border:none;padding:10px 16px;border-radius:999px;cursor:pointer}</style>
+</head>
+<body>
+<nav style="position:fixed;left:0;right:0;top:0;padding:18px;display:flex;align-items:center;justify-content:space-between;background:transparent;z-index:50"><div><img src="assets/Northlineee.jpg" alt="Northline" style="height:28px"></div><div></div></nav>
+<div class="wrap">
+  <h1>Contact Northline</h1>
+  <p>For general inquiries, press, partnerships, or careers — use the form below.</p>
+  <div class="card">
+    <form id="contactForm" action="https://formspree.io/f/your-form-id" method="POST">
+      <div class="field"><label>Name</label><input class="input" name="name" required></div>
+      <div class="field"><label>Email</label><input class="input" name="email" type="email" required></div>
+      <div class="field"><label>Type</label><select name="type" class="input"><option>General</option><option>Press</option><option>Partnerships</option><option>Careers</option></select></div>
+      <div class="field"><label>Message</label><textarea name="message" rows="6" required></textarea></div>
+      <div style="display:flex;gap:12px;align-items:center"><button type="submit">Send</button><div id="cfStatus" style="color:#555"></div></div>
+    </form>
+  </div>
+</div>
+<script>
+// Simple fallback: if Formspree not configured, send mailto
+const form = document.getElementById('contactForm');
+form.addEventListener('submit', function(e){
+  const action = form.getAttribute('action');
+  if(action.includes('your-form-id')){
+    e.preventDefault();
+    const name = form.name.value; const email = form.email.value; const type = form.type.value; const msg = form.message.value;
+    const mailto = `mailto:hello@northline.gg?subject=${encodeURIComponent(type+' inquiry from '+name)}&body=${encodeURIComponent(msg+'\n\nContact: '+email)}`;
+    window.location.href = mailto;
+  } else {
+    // let Formspree handle
+    const status = document.getElementById('cfStatus'); status.textContent='Sending...';
+    fetch(action, {method:'POST', body:new FormData(form)}).then(r=>{ if(r.ok){ status.textContent='Thanks — we received your message.'; form.reset(); } else { status.textContent='Error sending, try email hello@northline.gg'; } }).catch(()=> status.textContent='Network error — try hello@northline.gg');
+    e.preventDefault();
+  }
+});
+</script>
+<script src="cookie-consent.js"></script>
+</body>
+</html>

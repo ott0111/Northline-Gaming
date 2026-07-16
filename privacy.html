@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Northline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --void: #ffffff;
+  --surface: #f6f6f7;
+  --border: rgba(0,0,0,0.08);
+  --text-1: #0a0a0a;
+  --text-2: #55575c;
+  --text-3: #8a8d93;
+  --bearing: #050505;
+  --bearing-soft: rgba(5,5,5,0.06);
+  --bearing-glow: rgba(5,5,5,0.25);
+
+  --display: 'Space Grotesk', sans-serif;
+  --body: 'Inter', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+
+  --edge: clamp(24px, 6vw, 64px);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; background:var(--void); }
+body{ background:var(--void); color:var(--text-1); font-family:var(--body); line-height:1.7; -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+a{ color:inherit; text-decoration:none; }
+::selection{ background:var(--bearing); color:#fff; }
+:focus-visible{ outline:2px solid var(--bearing); outline-offset:3px; border-radius:4px; }
+@media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; } }
+
+.grain{ position:fixed; inset:0; pointer-events:none; z-index:1; background-image:radial-gradient(circle at 1px 1px, rgba(0,0,0,0.035) 1px, transparent 0); background-size:3px 3px; opacity:0.5; }
+
+.wrap{ max-width:1280px; margin:0 auto; padding-left:var(--edge); padding-right:var(--edge); }
+
+.nav{ position:fixed; top:0; left:0; right:0; z-index:50; padding:18px var(--edge); display:flex; align-items:center; justify-content:space-between; transition:background 0.4s, border-color 0.4s, backdrop-filter 0.4s; border-bottom:1px solid transparent; }
+.nav.scrolled{ background:rgba(5,5,5,0.72); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom-color:var(--border); }
+.logo{ font-family:var(--display); font-weight:700; font-size:1.15rem; letter-spacing:-0.01em; display:flex; align-items:center; gap:9px; }
+.logo-mark{ width:9px; height:9px; border-radius:50%; background:var(--bearing); box-shadow:0 0 10px var(--bearing-glow); }
+.logo img{ height:28px; display:inline-block; margin-right:8px; }
+.nav-links{ display:flex; gap:36px; font-size:0.9rem; color:var(--text-2); }
+.nav-links a{ transition:color 0.25s; }
+.nav-links a:hover{ color:var(--text-1); }
+.btn{ font-weight:600; font-size:0.85rem; padding:11px 20px; border-radius:100px; display:inline-flex; cursor:pointer; border:1px solid transparent; transition:transform 0.3s; }
+.btn-primary{ background:var(--bearing); color:var(--void); }
+.btn-primary:hover{ transform:translateY(-2px); box-shadow:0 10px 30px -8px var(--bearing-glow); }
+@media (max-width: 860px){ .nav-links{ display:none; } }
+
+.article{ max-width:700px; margin:0 auto; padding:140px var(--edge) 80px; }
+.article h1{ font-family:var(--display); font-weight:700; font-size:3rem; line-height:1.1; letter-spacing:-0.02em; margin-bottom:40px; }
+.article h2{ font-family:var(--display); font-weight:600; font-size:1.6rem; line-height:1.2; letter-spacing:-0.01em; margin:50px 0 20px; }
+.article p{ color:var(--text-1); font-size:1rem; margin-bottom:18px; }
+.article ul{ margin-left:24px; margin-bottom:18px; color:var(--text-1); }
+.article li{ margin-bottom:10px; }
+.article strong{ font-weight:600; }
+
+footer{ border-top:1px solid var(--border); padding:80px 0 32px; margin-top:80px; }
+.footer-top{ display:grid; grid-template-columns:1.4fr repeat(3, 0.8fr) 1fr; gap:40px; padding-bottom:60px; margin-bottom:40px; border-bottom:1px solid var(--border); }
+.footer-brand p{ color:var(--text-2); font-size:0.9rem; margin-top:16px; max-width:32ch; }
+.footer-col h5{ font-family:var(--mono); font-size:0.68rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--text-3); margin-bottom:18px; }
+.footer-col a{ display:block; color:var(--text-2); font-size:0.9rem; padding:6px 0; transition:color 0.25s; }
+.footer-col a:hover{ color:var(--text-1); }
+.footer-bottom{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; }
+.footer-bottom p{ color:var(--text-3); font-size:0.8rem; }
+.footer-social{ display:flex; gap:10px; }
+.footer-social a{ width:34px; height:34px; border:1px solid var(--border); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--text-2); transition:border-color 0.3s, color 0.3s, transform 0.3s; font-size:0.7rem; font-family:var(--mono); }
+.footer-social a:hover{ border-color:var(--bearing); color:var(--bearing); transform:translateY(-3px); }
+@media (max-width: 900px){ .footer-top{ grid-template-columns:repeat(2, 1fr); gap:36px; } }
+@media (max-width: 560px){ .footer-top{ grid-template-columns:1fr; } }
+
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<nav class="nav" id="mainNav">
+  <div class="logo"><img src="assets/Northlineee.jpg" alt="Northline" class="site-logo" style="height:28px;margin-right:8px"><span class="logo-mark" aria-hidden="true"></span>NORTHLINE</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="careers.html">Careers</a>
+    <a href="press.html">Press</a>
+  </div>
+</nav>
+
+<article class="article">
+  <h1>Privacy Policy</h1>
+  <p><strong>Last updated: July 2026</strong></p>
+
+  <h2>Overview</h2>
+  <p>At Northline, we respect your privacy. This policy explains how we collect, use, and protect your information when you visit our website or use our services.</p>
+
+  <h2>Information We Collect</h2>
+  <p>We may collect the following information:</p>
+  <ul>
+    <li><strong>Account Information:</strong> Name, email, profile information you provide when signing up for our community or applying to work with us</li>
+    <li><strong>Usage Data:</strong> Information about how you interact with our site — pages visited, time spent, links clicked</li>
+    <li><strong>Device Information:</strong> Browser type, IP address, operating system, and other technical data</li>
+    <li><strong>Communications:</strong> Content of messages you send to us through contact forms or email</li>
+  </ul>
+
+  <h2>How We Use Your Information</h2>
+  <p>We use collected information to:</p>
+  <ul>
+    <li>Provide and improve our services and website</li>
+    <li>Communicate with you about community access, applications, or account updates</li>
+    <li>Analyze site usage to understand how creators interact with Northline</li>
+    <li>Comply with legal obligations</li>
+    <li>Send you updates or newsletters (with your consent)</li>
+  </ul>
+
+  <h2>Data Security</h2>
+  <p>We implement reasonable technical and organizational measures to protect your personal information. However, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security of your data.</p>
+
+  <h2>Third-Party Services</h2>
+  <p>Our website may include links to third-party services. We are not responsible for their privacy practices. We encourage you to review their privacy policies before providing information.</p>
+
+  <h2>Cookies</h2>
+  <p>Our website may use cookies to enhance your experience. You can control cookie settings through your browser. Disabling cookies may affect some website functionality.</p>
+
+  <h2>Your Rights</h2>
+  <p>Depending on your location, you may have rights regarding your personal data, including the right to access, correct, or delete information we hold about you. To exercise these rights, please contact us at <strong>privacy@northline.gg</strong>.</p>
+
+  <h2>Children's Privacy</h2>
+  <p>Northline does not knowingly collect information from children under 13. If we become aware of such collection, we will delete the information and notify you immediately.</p>
+
+  <h2>Changes to This Policy</h2>
+  <p>We may update this privacy policy from time to time. Changes will be posted on this page with an updated date. Your continued use of our services constitutes acceptance of the updated policy.</p>
+
+  <h2>Contact Us</h2>
+  <p>If you have questions about this privacy policy or our data practices, please contact us at <strong>privacy@northline.gg</strong>.</p>
+</article>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><img src="assets/Northlineee.jpg" alt="Northline" class="site-logo" style="height:28px;margin-right:8px"><span class="logo-mark" aria-hidden="true"></span>NORTHLINE</div>
+        <p>A gaming lifestyle brand built for the next generation of competitive gaming creators.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="press.html">Press</a>
+      </div>
+      <div class="footer-col">
+        <h5>Platform</h5>
+        <a href="agency.html">Agency</a>
+        <a href="community.html">Community</a>
+        <a href="software.html">Software</a>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Northline. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="X / Twitter">X</a>
+        <a href="#" aria-label="Discord">DC</a>
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="YouTube">YT</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive:true });
+</script>
+
+<script src="cookie-consent.js"></script>
+
+</body>
+</html>

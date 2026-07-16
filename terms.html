@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Terms of Service — Northline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--void:#ffffff;--surface:#f6f6f7;--border:rgba(0,0,0,0.08);--text-1:#0a0a0a;--text-2:#55575c;--bearing:#050505;--edge:clamp(24px,6vw,64px);--display:'Space Grotesk',sans-serif;--body:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;--radius-md:16px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;background:var(--void)}
+body{font-family:var(--body);color:var(--text-1);line-height:1.7}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--bearing);outline-offset:3px}
+.wrap{max-width:1280px;margin:0 auto;padding-left:var(--edge);padding-right:var(--edge)}
+.nav{position:fixed;top:0;left:0;right:0;padding:18px var(--edge);display:flex;justify-content:space-between;align-items:center;z-index:50;border-bottom:1px solid transparent}
+.logo{font-family:var(--display);font-weight:700}
+.article{max-width:700px;margin:0 auto;padding:140px var(--edge) 80px}
+.article h1{font-family:var(--display);font-size:2.6rem;margin-bottom:24px}
+.article h2{font-family:var(--display);font-size:1.25rem;margin-top:28px;margin-bottom:12px}
+.article p{color:var(--text-2);margin-bottom:14px}
+.footer{border-top:1px solid var(--border);padding:80px 0 32px;margin-top:80px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap}
+.footer-bottom p{color:var(--text-2);font-size:0.9rem}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav" id="mainNav">
+    <div class="logo"><img src="assets/Northlineee.jpg" alt="Northline" class="site-logo" style="height:28px;margin-right:8px"><span style="display:inline-block;width:9px;height:9px;background:var(--bearing);border-radius:50%;margin-right:10px"></span>NORTHLINE</div>
+    <div style="display:flex;gap:12px;align-items:center">
+      <a href="become-a-creator.html" class="btn">Become a Creator</a>
+      <a href="join.html" class="btn">Join Northline</a>
+    </div>
+  </nav>
+</div>
+
+<article class="article">
+  <h1>Terms of Service</h1>
+  <p><strong>Last updated: July 2026</strong></p>
+  <p>Welcome to Northline. These Terms of Service govern your access to and use of the Northline website and services. By using our site, you agree to these terms.</p>
+  <h2>1. Use of Service</h2>
+  <p>You may use our services only in compliance with these terms and all applicable laws. You are responsible for your account and any activity that occurs while signed in.</p>
+  <h2>2. Intellectual Property</h2>
+  <p>All content on the site, including text, graphics, logos, and software, is the property of Northline or our licensors and is protected by copyright and other intellectual property laws.</p>
+  <h2>3. User Content</h2>
+  <p>By submitting content to Northline (profiles, applications, messages), you grant us a non-exclusive license to use and display that content for the purposes of operation and promotion of the service.</p>
+  <h2>4. Termination</h2>
+  <p>We may suspend or terminate access to the services for violations of these terms or for behavior that harms other users or our platform.</p>
+  <h2>5. Disclaimers and Limitation of Liability</h2>
+  <p>Our services are provided "as is." Northline disclaims warranties to the fullest extent permitted by law. To the maximum extent permitted, Northline is not liable for indirect or consequential damages.</p>
+  <h2>6. Governing Law</h2>
+  <p>These terms are governed by applicable laws. If you have questions, contact us at <strong>legal@northline.gg</strong>.</p>
+</article>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-bottom">
+      <p>© 2026 Northline. All rights reserved.</p>
+      <div style="display:flex;gap:10px">
+        <a href="#">X</a>
+        <a href="#">DC</a>
+        <a href="#">IG</a>
+        <a href="#">YT</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY>20), {passive:true});
+</script>
+<script src="cookie-consent.js"></script>
+</body>
+</html>

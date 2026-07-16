@@ -236,6 +236,7 @@ a{ color:inherit; text-decoration:none; }
   background:var(--bearing);
   box-shadow:0 0 10px var(--bearing-glow);
 }
+.logo img{ height:28px; display:inline-block; margin-right:8px; }
 .nav-links{
   display:flex;
   gap:36px;
@@ -459,7 +460,7 @@ footer{
 
 <!-- NAV -->
 <nav class="nav" id="mainNav">
-  <div class="logo"><span class="logo-mark"></span>NORTHLINE</div>
+  <div class="logo"><img src="assets/Northlineee.jpg" alt="Northline" class="site-logo"><span class="logo-mark" aria-hidden="true"></span></div>
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -599,6 +600,8 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
 revealEls.forEach(el => io.observe(el));
 </script>
+
+<script src="cookie-consent.js"></script>
 
 </body>
 </html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Team — Northline</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--edge:24px;--display:'Space Grotesk',sans-serif;--body:'Inter',sans-serif;--border:rgba(0,0,0,0.08);--text-2:#555}
+body{font-family:var(--body);margin:0;color:#111;background:#fff}
+.wrap{max-width:1100px;margin:120px auto;padding:0 var(--edge)}
+.controls{display:flex;gap:12px;align-items:center;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.card{border:1px solid var(--border);padding:16px;border-radius:10px;text-align:center}
+.avatar{width:72px;height:72px;border-radius:50%;background:#eee;margin:0 auto 8px;display:flex;align-items:center;justify-content:center;font-weight:700}
+</style>
+</head>
+<body>
+<nav style="position:fixed;left:0;right:0;top:0;padding:18px;display:flex;align-items:center;justify-content:space-between;background:transparent;z-index:50"><div><img src="assets/Northlineee.jpg" alt="Northline" style="height:28px"></div><div></div></nav>
+<div class="wrap">
+  <h1 style="font-family:var(--display);">Team & Roster</h1>
+  <p style="color:var(--text-2);">Explore our creators. We're currently building our roster — check back soon or <a href="become-a-creator.html">apply</a>.</p>
+  <div class="controls">
+    <input id="search" placeholder="Search by name or tag" style="flex:1;padding:10px;border:1px solid var(--border);border-radius:8px">
+    <select id="filter" style="padding:10px;border:1px solid var(--border);border-radius:8px"><option value="all">All</option><option value="fps">FPS</option><option value="br">Battle Royale</option><option value="racing">Racing</option><option value="variety">Variety</option></select>
+  </div>
+  <div id="grid" class="grid">
+    <!-- Placeholder: no creators yet -->
+    <div style="grid-column:1/-1;text-align:center;padding:40px;border:1px dashed var(--border);border-radius:12px;color:var(--text-2)">No creators listed yet — <a href="become-a-creator.html">apply to join the roster</a>.</div>
+  </div>
+</div>
+<script src="cookie-consent.js"></script>
+</body>
+</html>

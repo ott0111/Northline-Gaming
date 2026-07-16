@@ -273,6 +273,7 @@ a{ color:inherit; text-decoration:none; }
   background:var(--bearing);
   box-shadow:0 0 10px var(--bearing-glow);
 }
+.logo img{ height:28px; display:inline-block; margin-right:8px; }
 .nav-links{
   display:flex;
   gap:36px;
@@ -750,7 +751,7 @@ footer{
 
 <!-- NAV -->
 <nav class="nav" id="mainNav">
-  <div class="logo"><span class="logo-mark"></span>NORTHLINE</div>
+  <div class="logo"><img src="assets/Northlineee.jpg" alt="Northline" class="site-logo"><span class="logo-mark" aria-hidden="true"></span></div>
   <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -862,41 +863,10 @@ footer{
     </div>
 
     <div class="creator-grid reveal">
-      <div class="creator-card">
-        <div class="creator-avatar" style="background:linear-gradient(140deg,#050505,#5a5c60);">KR</div>
-        <div class="creator-name">Kairo</div>
-        <div class="creator-meta">FPS · Full-time roster</div>
-        <div class="creator-stats"><span class="creator-stat-num">1.8M</span><span class="creator-stat-label">Followers</span></div>
-      </div>
-      <div class="creator-card">
-        <div class="creator-avatar" style="background:linear-gradient(140deg,#7a5fff,#b7a6ff);">VL</div>
-        <div class="creator-name">Vela</div>
-        <div class="creator-meta">Battle Royale · Full-time roster</div>
-        <div class="creator-stats"><span class="creator-stat-num">2.4M</span><span class="creator-stat-label">Followers</span></div>
-      </div>
-      <div class="creator-card">
-        <div class="creator-avatar" style="background:linear-gradient(140deg,#3fb6c9,#8fe0ea);">DR</div>
-        <div class="creator-name">Drift</div>
-        <div class="creator-meta">Racing Sim · Part-time roster</div>
-        <div class="creator-stats"><span class="creator-stat-num">640K</span><span class="creator-stat-label">Followers</span></div>
-      </div>
-      <div class="creator-card">
-        <div class="creator-avatar" style="background:linear-gradient(140deg,#050505,#3a3b3e);">OR</div>
-        <div class="creator-name">Orbit</div>
-        <div class="creator-meta">Strategy · Full-time roster</div>
-        <div class="creator-stats"><span class="creator-stat-num">980K</span><span class="creator-stat-label">Followers</span></div>
-      </div>
-      <div class="creator-card">
-        <div class="creator-avatar" style="background:linear-gradient(140deg,#ff9f6a,#ffcf9e);">AS</div>
-        <div class="creator-name">Ash</div>
-        <div class="creator-meta">Variety / IRL · Full-time roster</div>
-        <div class="creator-stats"><span class="creator-stat-num">1.2M</span><span class="creator-stat-label">Followers</span></div>
-      </div>
-      <div class="creator-card">
-        <div class="creator-avatar" style="background:linear-gradient(140deg,#ff6a9e,#ffa8c6);">NV</div>
-        <div class="creator-name">Nova</div>
-        <div class="creator-meta">Fighting Games · Part-time roster</div>
-        <div class="creator-stats"><span class="creator-stat-num">710K</span><span class="creator-stat-label">Followers</span></div>
+      <div class="creator-empty" style="text-align:center;padding:48px 20px;">
+        <div style="font-family:var(--display); font-size:1.6rem; margin-bottom:12px;">Roster Coming Soon</div>
+        <p style="color:var(--text-2); max-width:56ch; margin:0 auto 18px;">We're currently building our creator roster. If you're a creator or nominee, <a href="become-a-creator.html">apply here</a> and we'll be in touch.</p>
+        <a href="become-a-creator.html" class="btn btn-primary">Apply to the Roster</a>
       </div>
     </div>
   </div>
@@ -998,6 +968,9 @@ footer{
     <a href="become-a-creator.html" class="btn btn-ghost">Become a Creator</a>
   </div>
 </section>
+
+<!-- AD SLOT -->
+<div class="ad-slot" style="max-width:1280px;margin:28px auto;padding:20px;border:1px dashed rgba(0,0,0,0.06);text-align:center;color:var(--text-2);">Ad placeholder — 728×90 / Sponsor</div>
 
 <!-- FOOTER -->
 <footer>

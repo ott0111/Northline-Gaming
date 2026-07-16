@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Join Northline</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--void:#fff;--bearing:#050505;--edge:clamp(24px,6vw,64px);--display:'Space Grotesk',sans-serif;--body:'Inter',sans-serif;--border:rgba(0,0,0,0.08);--text-2:#55575c;--radius-md:16px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);color:var(--bearing);background:var(--void)}
+.wrap{max-width:960px;margin:0 auto;padding:120px var(--edge)}
+.nav{position:fixed;top:0;left:0;right:0;padding:18px var(--edge);display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid transparent}
+.logo{font-family:var(--display);font-weight:700}
+.card{background:rgba(0,0,0,0.03);border:1px solid var(--border);padding:36px;border-radius:var(--radius-md)}
+.form-row{display:flex;gap:12px;margin-bottom:12px}
+.input,textarea{width:100%;padding:12px;border:1px solid var(--border);border-radius:8px;font-size:0.95rem}
+.checkbox-row{display:flex;gap:12px;flex-wrap:wrap;margin:12px 0}
+.btn{display:inline-block;padding:12px 18px;border-radius:100px;background:var(--bearing);color:#fff;border:none;cursor:pointer}
+.help{color:var(--text-2);font-size:0.95rem;margin-top:10px}
+</style>
+</head>
+<body>
+<nav class="nav" id="mainNav"><div class="logo"><img src="assets/Northlineee.jpg" alt="Northline" class="site-logo" style="height:28px;margin-right:8px">NORTHLINE</div><div></div></nav>
+<div class="wrap">
+  <h1 style="font-family:var(--display);font-size:2.4rem;margin-bottom:14px">Join Northline</h1>
+  <p style="color:var(--text-2);margin-bottom:24px;max-width:60ch">Sign up to hear about community access, events, and early product releases. No spam — just meaningful updates.</p>
+  <div class="card">
+    <form id="joinForm" onsubmit="return false;">
+      <div style="margin-bottom:12px"><label for="name">Full name</label><input id="name" class="input" type="text" placeholder="Your name" required></div>
+      <div style="margin-bottom:12px"><label for="email">Email</label><input id="email" class="input" type="email" placeholder="you@email.com" required></div>
+      <div style="margin-bottom:12px"><label for="handle">Preferred handle (optional)</label><input id="handle" class="input" type="text" placeholder="e.g. gamerTag"></div>
+      <div style="margin-top:12px"><div style="font-weight:600;margin-bottom:8px">Interests</div>
+        <div class="checkbox-row">
+          <label><input type="checkbox" name="interests" value="community"> Community</label>
+          <label><input type="checkbox" name="interests" value="software"> Software</label>
+          <label><input type="checkbox" name="interests" value="apparel"> Apparel</label>
+          <label><input type="checkbox" name="interests" value="events"> Events</label>
+        </div>
+      </div>
+      <div style="margin-top:18px"><button class="btn" onclick="submitJoin()">Request Access</button></div>
+      <div id="result" class="help" role="status" aria-live="polite" style="display:none"></div>
+    </form>
+  </div>
+</div>
+<footer style="border-top:1px solid var(--border);padding:32px var(--edge);margin-top:40px"><div class="wrap"><div style="display:flex;justify-content:space-between;align-items:center"><div>© 2026 Northline</div><div style="display:flex;gap:10px"><a href="#">X</a><a href="#">DC</a><a href="#">IG</a></div></div></div></footer>
+<script>
+function submitJoin(){
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const result = document.getElementById('result');
+  if(!name || !email.includes('@')){ result.style.display='block'; result.textContent='Please provide name and valid email.'; return }
+  result.style.display='block'; result.textContent='Thanks! We\'ll review your request and be in touch.';
+  document.getElementById('joinForm').reset();
+}
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>20),{passive:true});
+</script>
+<script src="cookie-consent.js"></script>
+</body>
+</html>
