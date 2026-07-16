@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Press Kit — Northline Media Resources</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --void: #ffffff;
+  --surface: #f6f6f7;
+  --surface-2: #ededee;
+  --border: rgba(0,0,0,0.08);
+  --border-strong: rgba(0,0,0,0.15);
+  --text-1: #0a0a0a;
+  --text-2: #55575c;
+  --text-3: #8a8d93;
+  --bearing: #050505;
+  --bearing-soft: rgba(5,5,5,0.06);
+  --bearing-glow: rgba(5,5,5,0.25);
+
+  --display: 'Space Grotesk', sans-serif;
+  --body: 'Inter', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+
+  --edge: clamp(24px, 6vw, 64px);
+  --radius-lg: 24px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+
+html{ scroll-behavior:smooth; background:var(--void); }
+
+body{
+  background:var(--void);
+  color:var(--text-1);
+  font-family:var(--body);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+img{ max-width:100%; display:block; }
+
+a{ color:inherit; text-decoration:none; }
+
+::selection{ background:var(--bearing); color:#fff; }
+
+:focus-visible{
+  outline:2px solid var(--bearing);
+  outline-offset:3px;
+  border-radius:4px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+}
+
+.grain{
+  position:fixed; inset:0; pointer-events:none; z-index:1;
+  background-image:radial-gradient(circle at 1px 1px, rgba(0,0,0,0.035) 1px, transparent 0);
+  background-size:3px 3px;
+  opacity:0.5;
+}
+
+.wrap{
+  max-width:1280px;
+  margin:0 auto;
+  padding-left:var(--edge);
+  padding-right:var(--edge);
+}
+
+.eyebrow{
+  font-family:var(--mono);
+  font-size:0.72rem;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--bearing);
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:20px;
+}
+.eyebrow::before{
+  content:'';
+  width:16px; height:1px;
+  background:var(--bearing);
+  display:inline-block;
+}
+
+.btn{
+  font-family:var(--body);
+  font-weight:600;
+  font-size:0.95rem;
+  padding:14px 26px;
+  border-radius:100px;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  transition:transform 0.35s cubic-bezier(.16,1,.3,1), background 0.3s, border-color 0.3s, box-shadow 0.3s;
+  cursor:pointer;
+  border:1px solid transparent;
+  white-space:nowrap;
+}
+.btn:hover{ transform:translateY(-2px); }
+.btn:active{ transform:translateY(0px) scale(0.98); }
+
+.btn-primary{
+  background:var(--bearing);
+  color:var(--void);
+}
+.btn-primary:hover{ box-shadow:0 10px 30px -8px var(--bearing-glow); }
+
+.btn-ghost{
+  background:transparent;
+  border-color:var(--border-strong);
+  color:var(--text-1);
+}
+.btn-ghost:hover{ border-color:var(--bearing); background:var(--bearing-soft); }
+
+.btn-sm{ padding:11px 20px; font-size:0.85rem; }
+
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity 0.9s cubic-bezier(.16,1,.3,1), transform 0.9s cubic-bezier(.16,1,.3,1);
+}
+.reveal.in-view{ opacity:1; transform:translateY(0); }
+
+.bearing-rail{
+  position:fixed;
+  left:36px;
+  top:120px;
+  bottom:120px;
+  width:1px;
+  z-index:40;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.bearing-track{
+  position:relative;
+  width:1px;
+  flex:1;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.02));
+}
+.bearing-fill{
+  position:absolute;
+  top:0; left:0; width:100%;
+  height:0%;
+  background:linear-gradient(to bottom, var(--bearing), rgba(5,5,5,0.1));
+  box-shadow:0 0 12px var(--bearing-glow);
+  transition:height 0.1s linear;
+}
+.bearing-node{
+  position:absolute;
+  left:50%;
+  top:0%;
+  width:8px; height:8px;
+  border-radius:50%;
+  background:var(--bearing);
+  box-shadow:0 0 0 4px rgba(5,5,5,0.14), 0 0 16px var(--bearing-glow);
+  transform:translate(-50%,-50%);
+  transition:top 0.1s linear;
+}
+.bearing-label{
+  font-family:var(--mono);
+  font-size:0.62rem;
+  letter-spacing:0.12em;
+  color:var(--text-3);
+  writing-mode:vertical-rl;
+  text-orientation:mixed;
+  margin-top:12px;
+}
+.bearing-deg{
+  font-family:var(--mono);
+  font-size:0.62rem;
+  color:var(--bearing);
+  writing-mode:vertical-rl;
+  margin-bottom:12px;
+}
+
+@media (max-width: 980px){
+  .bearing-rail{ display:none; }
+}
+
+.top-progress{
+  position:fixed; top:0; left:0; right:0; height:2px; z-index:60;
+  background:rgba(0,0,0,0.08);
+  display:none;
+}
+.top-progress-fill{
+  height:100%; width:0%;
+  background:var(--bearing);
+  box-shadow:0 0 10px var(--bearing-glow);
+}
+@media (max-width: 980px){
+  .top-progress{ display:block; }
+}
+
+.nav{
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:50;
+  padding:18px var(--edge);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  transition:background 0.4s, border-color 0.4s, backdrop-filter 0.4s;
+  border-bottom:1px solid transparent;
+}
+.nav.scrolled{
+  background:rgba(5,5,5,0.72);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border-bottom-color:var(--border);
+}
+.logo{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:1.15rem;
+  letter-spacing:-0.01em;
+  display:flex;
+  align-items:center;
+  gap:9px;
+}
+.logo-mark{
+  width:9px; height:9px;
+  border-radius:50%;
+  background:var(--bearing);
+  box-shadow:0 0 10px var(--bearing-glow);
+}
+.nav-links{
+  display:flex;
+  gap:36px;
+  font-size:0.9rem;
+  color:var(--text-2);
+}
+.nav-links a{ transition:color 0.25s; position:relative; }
+.nav-links a:hover{ color:var(--text-1); }
+.nav-cta{ display:flex; align-items:center; gap:14px; }
+
+@media (max-width: 860px){
+  .nav-links{ display:none; }
+  .nav-cta .btn-ghost{ display:none; }
+}
+
+.page-hero{
+  min-height:60svh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-top:120px;
+  padding-bottom:80px;
+  border-bottom:1px solid var(--border);
+}
+
+.page-hero h1{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(2.4rem, 6vw, 5rem);
+  line-height:1.1;
+  letter-spacing:-0.02em;
+  max-width:12ch;
+  margin-bottom:24px;
+}
+
+.page-hero p{
+  color:var(--text-2);
+  font-size:clamp(1rem, 1.2vw, 1.15rem);
+  max-width:60ch;
+  line-height:1.7;
+}
+
+.article{
+  max-width:700px;
+  padding:120px var(--edge) 80px;
+}
+
+.article h2{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:clamp(1.6rem, 3vw, 2.2rem);
+  line-height:1.2;
+  letter-spacing:-0.01em;
+  margin-bottom:24px;
+  margin-top:64px;
+}
+
+.article h2:first-of-type{ margin-top:0; }
+
+.article p{
+  color:var(--text-1);
+  font-size:1rem;
+  line-height:1.8;
+  margin-bottom:20px;
+}
+
+.article strong{ font-weight:600; color:var(--text-1); }
+
+.download-section{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:var(--radius-md);
+  padding:40px;
+  margin:40px 0;
+}
+
+.download-section h3{
+  font-family:var(--display);
+  font-weight:600;
+  font-size:1.2rem;
+  margin-bottom:20px;
+}
+
+.download-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.download-link{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 16px;
+  background:var(--void);
+  border:1px solid var(--border);
+  border-radius:8px;
+  cursor:pointer;
+  transition:border-color 0.3s, background 0.3s;
+  font-size:0.95rem;
+  color:var(--text-1);
+}
+
+.download-link:hover{
+  border-color:var(--bearing);
+  background:var(--bearing-soft);
+}
+
+.download-link::before{
+  content:'↓';
+  font-weight:600;
+  color:var(--bearing);
+}
+
+footer{
+  border-top:1px solid var(--border);
+  padding:80px 0 32px;
+}
+.footer-top{
+  display:grid;
+  grid-template-columns:1.4fr repeat(3, 0.8fr) 1fr;
+  gap:40px;
+  padding-bottom:60px;
+  margin-bottom:40px;
+  border-bottom:1px solid var(--border);
+}
+.footer-brand p{ color:var(--text-2); font-size:0.9rem; margin-top:16px; max-width:32ch; }
+.footer-col h5{
+  font-family:var(--mono);
+  font-size:0.68rem;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--text-3);
+  margin-bottom:18px;
+}
+.footer-col a{
+  display:block;
+  color:var(--text-2);
+  font-size:0.9rem;
+  padding:6px 0;
+  transition:color 0.25s;
+}
+.footer-col a:hover{ color:var(--text-1); }
+
+.footer-newsletter form{
+  display:flex;
+  border:1px solid var(--border-strong);
+  border-radius:100px;
+  padding:5px;
+  margin-top:16px;
+  max-width:280px;
+}
+.footer-newsletter input{
+  flex:1;
+  background:none;
+  border:none;
+  outline:none;
+  color:var(--text-1);
+  font-size:0.85rem;
+  padding:8px 14px;
+  font-family:var(--body);
+}
+.footer-newsletter input::placeholder{ color:var(--text-3); }
+.footer-newsletter button{
+  background:var(--bearing);
+  border:none;
+  border-radius:100px;
+  width:34px; height:34px;
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer;
+  color:var(--void);
+  flex-shrink:0;
+  transition:transform 0.3s;
+}
+.footer-newsletter button:hover{ transform:scale(1.08); }
+
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+}
+.footer-bottom p{ color:var(--text-3); font-size:0.8rem; }
+.footer-social{ display:flex; gap:10px; }
+.footer-social a{
+  width:34px; height:34px;
+  border:1px solid var(--border);
+  border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  color:var(--text-2);
+  transition:border-color 0.3s, color 0.3s, transform 0.3s;
+  font-size:0.7rem;
+  font-family:var(--mono);
+}
+.footer-social a:hover{ border-color:var(--bearing); color:var(--bearing); transform:translateY(-3px); }
+
+@media (max-width: 900px){
+  .footer-top{ grid-template-columns:repeat(2, 1fr); gap:36px; }
+}
+@media (max-width: 560px){
+  .footer-top{ grid-template-columns:1fr; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+
+<div class="top-progress"><div class="top-progress-fill" id="topProgressFill"></div></div>
+
+<div class="bearing-rail" aria-hidden="true">
+  <span class="bearing-deg" id="bearingDeg">N 000°</span>
+  <div class="bearing-track">
+    <div class="bearing-fill" id="bearingFill"></div>
+    <div class="bearing-node" id="bearingNode"></div>
+  </div>
+  <span class="bearing-label">NORTHLINE</span>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="mainNav">
+  <div class="logo"><span class="logo-mark"></span>NORTHLINE</div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="careers.html">Careers</a>
+    <a href="press.html">Press</a>
+  </div>
+  <div class="nav-cta">
+    <a href="become-a-creator.html" class="btn btn-ghost btn-sm">Become a Creator</a>
+    <a href="join.html" class="btn btn-primary btn-sm">Join Northline</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<header class="page-hero">
+  <div class="wrap">
+    <h1>Press Kit</h1>
+    <p>Resources, brand assets, and factual information for journalists, podcasters, and media partners covering Northline.</p>
+  </div>
+</header>
+
+<!-- ARTICLE -->
+<div class="wrap">
+  <article class="article reveal">
+    <h2>About Northline</h2>
+    <p>Northline is a gaming lifestyle brand and creator agency built for the next generation of competitive gaming creators. Founded in 2026, Northline represents over 40 of the most driven creators across competitive gaming, with a combined monthly audience reach exceeding 120 million viewers across 18 countries.</p>
+    
+    <p>The Northline platform operates across six pillars: Creator Agency (representation and career management), Community (a private network for creator mentorship and collaboration), Software (tools for analytics, scheduling, and career management), Apparel (performance and lifestyle gear), Events (live experiences and community gatherings), and Media (original shows and stories).</p>
+    
+    <h2>Key Facts</h2>
+    <ul style="margin-left:24px; margin-bottom:20px; list-style-type:none;">
+      <li style="margin-bottom:12px;"><strong>Founded:</strong> 2026</li>
+      <li style="margin-bottom:12px;"><strong>Headquarters:</strong> Global (remote-first)</li>
+      <li style="margin-bottom:12px;"><strong>Creator Roster:</strong> 40+ across FPS, Battle Royale, Racing Sim, Strategy, Variety, and Fighting Games</li>
+      <li style="margin-bottom:12px;"><strong>Combined Reach:</strong> 120M+ monthly viewers</li>
+      <li style="margin-bottom:12px;"><strong>Countries Represented:</strong> 18</li>
+      <li><strong>Mission:</strong> Build the infrastructure competitive gaming creators need to sustain and scale their careers</li>
+    </ul>
+    
+    <h2>Brand Assets</h2>
+    <div class="download-section">
+      <h3>Logo & Logo Mark</h3>
+      <div class="download-list">
+        <div class="download-link">Northline Logo (PNG)</div>
+        <div class="download-link">Northline Logo Mark (SVG)</div>
+        <div class="download-link">Brand Guidelines (PDF)</div>
+      </div>
+    </div>
+    
+    <h2>Media Contact</h2>
+    <p>For press inquiries, media requests, or interview opportunities, please reach out to:</p>
+    <p><strong>press@northline.gg</strong></p>
+    <p>We aim to respond to all inquiries within 48 hours.</p>
+  </article>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo"><span class="logo-mark"></span>NORTHLINE</div>
+        <p>A gaming lifestyle brand built for the next generation of competitive gaming creators.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <a href="about.html">About</a>
+        <a href="careers.html">Careers</a>
+        <a href="press.html">Press</a>
+      </div>
+      <div class="footer-col">
+        <h5>Platform</h5>
+        <a href="agency.html">Agency</a>
+        <a href="community.html">Community</a>
+        <a href="software.html">Software</a>
+      </div>
+      <div class="footer-col">
+        <h5>Legal</h5>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+      <div class="footer-col footer-newsletter">
+        <h5>Stay Ahead</h5>
+        <form onsubmit="return false;">
+          <input type="email" placeholder="Your email" aria-label="Email address">
+          <button type="submit" aria-label="Subscribe">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Northline. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="#" aria-label="X / Twitter">X</a>
+        <a href="#" aria-label="Discord">DC</a>
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="YouTube">YT</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+}, { passive:true });
+
+const bearingFill = document.getElementById('bearingFill');
+const bearingNode = document.getElementById('bearingNode');
+const bearingDeg = document.getElementById('bearingDeg');
+const topFill = document.getElementById('topProgressFill');
+
+function updateProgress(){
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+  if(bearingFill) bearingFill.style.height = pct + '%';
+  if(bearingNode) bearingNode.style.top = pct + '%';
+  if(topFill) topFill.style.width = pct + '%';
+  if(bearingDeg){
+    const deg = Math.round((pct / 100) * 360);
+    bearingDeg.textContent = 'N ' + String(deg).padStart(3,'0') + '°';
+  }
+}
+window.addEventListener('scroll', updateProgress, { passive:true });
+updateProgress();
+
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('in-view');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
