@@ -20,6 +20,12 @@ body{font-family:var(--body);color:var(--bearing);background:var(--void)}
 .help{color:var(--text-2);font-size:0.95rem;margin-top:10px}
 @media(max-width:700px){.form-grid{grid-template-columns:1fr}}
 </style>
+<style>
+.site-logo{height:34px}
+.ad-slot{display:flex;align-items:center;justify-content:center;background:var(--surface,#f6f6f7);border:1px dashed var(--border);padding:12px;border-radius:10px;color:var(--text-2);min-height:88px}
+@media (max-width:700px){ .ad-slot{min-height:64px} }
+</style>
+</style>
 </head>
 <body>
 <nav class="nav" id="mainNav"><div class="logo"><img src="assets/Northlineee.jpg" alt="Northline" class="site-logo" style="height:28px;margin-right:8px">NORTHLINE</div><div></div></nav>
@@ -65,7 +71,19 @@ body{font-family:var(--body);color:var(--bearing);background:var(--void)}
     </form>
   </div>
 </div>
-<footer style="border-top:1px solid var(--border);padding:32px var(--edge);margin-top:40px"><div class="wrap"><div style="display:flex;justify-content:space-between;align-items:center"><div>© 2026 Northline</div><div style="display:flex;gap:10px"><a href="#">X</a><a href="#">DC</a><a href="#">IG</a></div></div></div></footer>
+<footer style="border-top:1px solid var(--border);padding:32px var(--edge);margin-top:40px">
+  <div class="wrap">
+    <div class="footer-top" style="display:grid;grid-template-columns:1fr 320px;gap:18px;padding-bottom:18px;border-bottom:1px solid rgba(0,0,0,0.06);margin-bottom:16px">
+      <div>
+        <div>© 2026 Northline</div>
+      </div>
+      <div>
+        <div class="ad-slot">Ad placeholder — 300×250</div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center"><div></div><div style="display:flex;gap:10px"><a href="#">X</a><a href="#">DC</a><a href="#">IG</a></div></div>
+  </div>
+</footer>
 <script>
 function submitCreator(){
   const name = document.getElementById('name').value.trim();
